@@ -1,6 +1,8 @@
 FROM golang:1.21-alpine as build
+WORKDIR /crud
 
 COPY . .
+RUN ls -l
 
 RUN go mod download
 RUN go build -o /backup -ldflags="-s -w" main.go
