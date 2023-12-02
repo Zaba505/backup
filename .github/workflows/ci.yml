@@ -39,5 +39,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: "ghcr.io/zaba505/backup/backup:${{ steps.info.outputs.build_version }}"
+          tags: "ghcr.io/zaba505/backup/backup:latest,ghcr.io/zaba505/backup/backup:${{ steps.info.outputs.build_version }}"
           file: ./Containerfile
