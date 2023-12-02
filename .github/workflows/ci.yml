@@ -25,11 +25,6 @@ jobs:
           short_commit_id=$(git rev-parse --short HEAD)
           echo "build_version=${formatted_date}.${time}.${short_commit_id}" >> $GITHUB_OUTPUT
 
-      - name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: 1.21.x
-
       - name: Build
         run: docker build -t "ghcr.io/zaba505/backup/backup:${{ steps.info.outputs.build_version }}" - < Containerfile
 

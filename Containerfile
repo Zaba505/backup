@@ -1,5 +1,4 @@
 FROM golang:1.21-alpine as build
-WORKDIR /crud
 
 COPY . .
 
